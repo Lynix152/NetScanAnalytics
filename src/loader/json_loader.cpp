@@ -1,5 +1,6 @@
 #include "../../include/json_loader.h"
 #include "../../include/Logger.h"
+#include "data_loader.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>

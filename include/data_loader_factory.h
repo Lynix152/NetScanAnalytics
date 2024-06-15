@@ -7,7 +7,7 @@
 
 class DataLoaderFactory {
 public:
-    static std::unique_ptr<DataLoader> createDataLoader(const std::string &filename);
+    static std::unique_ptr<DataLoader> createDataLoader(const std::string& filename);
 };
 
 #endif // DATA_LOADER_FACTORY_H

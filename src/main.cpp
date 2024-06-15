@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <mpi.h>
+#include <analysis.h>
 
 void printFile(const std::string &filename) {
     std::ifstream file(filename);
