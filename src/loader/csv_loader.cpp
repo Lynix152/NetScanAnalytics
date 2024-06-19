@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <vector>
 #include <string>
+#include <iostream>
 
 std::vector<std::vector<std::string>> load_csv(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
@@ -12,7 +13,8 @@ std::vector<std::vector<std::string>> load_csv(const std::string& filename) {
 
     if (!file.is_open()) {
         Logger::getInstance().log(CRITICAL, "Cannot open the file to be analyzed");
-        throw std::runtime_error("Cannot find file");
+        std::cout << "Program has to interrupt - no xml file" << std::endl;
+        abort();
     }
 
     std::string line;

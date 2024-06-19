@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 project(DataAnalysisSystem)
 
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
+
+# Set Debugging flags and build type
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
+set(CMAKE_BUILD_TYPE Debug)
 
 # Include directories
 include_directories(include)
@@ -24,13 +30,14 @@ target_link_libraries(DataAnalysisSystem tinyxml2::tinyxml2)
 
 # Find and link nlohmann_json library
 find_package(nlohmann_json REQUIRED)
+include_directories(${nlohmann_json_INCLUDE_DIR})
 target_link_libraries(DataAnalysisSystem nlohmann_json::nlohmann_json)
 
 # Set output directory based on platform
 if(WIN32)
     set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 else()
-    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin/linux)
+    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 endif()
 
 # Optional: Copy DLLs for Windows

@@ -25,4 +25,6 @@ public:
     std::vector<std::vector<std::string>> load(const std::string& filename) override;
 };
 
+std::vector<std::vector<std::string>> load_data_manually();
+
 #endif // DATA_LOADER_H

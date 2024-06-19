@@ -4,6 +4,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <nlohmann/json.hpp>
+#include <iostream>
 
 std::vector<std::vector<std::string>> load_json(const std::string &filename) {
     std::vector<std::vector<std::string>> data;
@@ -11,7 +12,8 @@ std::vector<std::vector<std::string>> load_json(const std::string &filename) {
 
     if (!file.is_open()) {
         Logger::getInstance().log(CRITICAL, "Cannot open the file to be analyzed");
-        throw std::runtime_error("Cannot find file");
+        std::cout << "Program has to interrupt - no json file" << std::endl;
+        abort();
     }
 
     nlohmann::json jsonData;

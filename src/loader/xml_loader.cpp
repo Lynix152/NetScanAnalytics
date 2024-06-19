@@ -4,6 +4,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <tinyxml2.h>
+#include <iostream>
 
 std::vector<std::vector<std::string>> load_xml(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
@@ -11,7 +12,8 @@ std::vector<std::vector<std::string>> load_xml(const std::string& filename) {
 
     if (doc.LoadFile(filename.c_str()) != tinyxml2::XML_SUCCESS) {
         Logger::getInstance().log(CRITICAL, "Cannot open the file to be analyzed");
-        throw std::runtime_error("Cannot find file");
+        std::cout << "Program has to interrupt - no xml file" << std::endl;
+        abort();
     }
 
     tinyxml2::XMLElement* root = doc.RootElement();
