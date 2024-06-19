@@ -1,12 +1,11 @@
 #include "../../include/json_loader.h"
 #include "../../include/Logger.h"
-#include "data_loader.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
-#include <nlohmann/json.hpp>  // You need to have nlohmann/json.hpp available
+#include <nlohmann/json.hpp>
 
-std::vector<std::vector<std::string>> JSONLoader::load(const std::string &filename) {
+std::vector<std::vector<std::string>> load_json(const std::string &filename) {
     std::vector<std::vector<std::string>> data;
     std::ifstream file(filename);
 

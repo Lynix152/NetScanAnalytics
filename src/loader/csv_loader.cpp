@@ -1,11 +1,12 @@
 #include "../../include/csv_loader.h"
 #include "../../include/Logger.h"
-#include "data_loader.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#include <vector>
+#include <string>
 
-std::vector<std::vector<std::string>> CSVLoader::load(const std::string &filename) {
+std::vector<std::vector<std::string>> load_csv(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
     std::ifstream file(filename);
 
@@ -15,19 +16,15 @@ std::vector<std::vector<std::string>> CSVLoader::load(const std::string &filenam
     }
 
     std::string line;
-
     while (std::getline(file, line)) {
         std::vector<std::string> row;
         std::stringstream ss(line);
-
         std::string value;
-
         while (std::getline(ss, value, ',')) {
             row.push_back(value);
         }
         data.push_back(row);
     }
-
     file.close();
     return data;
 }

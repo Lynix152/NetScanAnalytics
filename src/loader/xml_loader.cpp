@@ -1,11 +1,11 @@
-#include "../../include/xml_loader.h"
-#include "../../include/Logger.h"
+#include "../include/xml_loader.h"
+#include "../include/Logger.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
-#include <tinyxml2.h>  // You need to have tinyxml2.h available
+#include <tinyxml2.h>
 
-std::vector<std::vector<std::string>> XMLLoader::load(const std::string &filename) {
+std::vector<std::vector<std::string>> load_xml(const std::string& filename) {
     std::vector<std::vector<std::string>> data;
     tinyxml2::XMLDocument doc;
 
