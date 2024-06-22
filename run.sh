@@ -10,5 +10,16 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 # Bauen des Projekts (mit Debug-Flags)
 make
 
-# Ausführen des Programms mit 2 Prozessen
-mpirun -np 2 ./bin/DataAnalysisSystem
+# Core-Dumps aktivieren (für den Fall, dass sie benötigt werden)
+ulimit -c unlimited
+
+# Überprüfen, ob das Programm erfolgreich beendet wurde
+if ! mpirun -np 2 ./bin/DataAnalysisSystem; then
+    echo "Das Programm ist nicht erfolgreich beendet worden."
+    echo "Starten des Debuggers..."
+
+    # Starten von gdb für detailliertes Debugging
+    gdb -ex run --args mpirun -np 2 ./bin/DataAnalysisSystem
+else
+    echo "Das Programm wurde erfolgreich beendet."
+fi

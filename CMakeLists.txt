@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(DataAnalysisSystem)
 
-# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Set Debugging flags and build type
+# Debugging flags
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
 set(CMAKE_BUILD_TYPE Debug)
 
 # Include directories
@@ -30,7 +28,6 @@ target_link_libraries(DataAnalysisSystem tinyxml2::tinyxml2)
 
 # Find and link nlohmann_json library
 find_package(nlohmann_json REQUIRED)
-include_directories(${nlohmann_json_INCLUDE_DIR})
 target_link_libraries(DataAnalysisSystem nlohmann_json::nlohmann_json)
 
 # Set output directory based on platform

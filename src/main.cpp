@@ -34,7 +34,7 @@ void checkdir() {
 int main(int argc, char **argv) {
     Logger::getInstance().log(DEBUG, "DataSpectraX has started, logfile: 'logfile.txt'");
     MPI_Init(&argc, &argv);
-    checkdir();
+
     int world_size;
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
@@ -43,6 +43,7 @@ int main(int argc, char **argv) {
 
     if (world_rank == 0) {
         printFile("asciiart.txt");
+        checkdir();
 
         std::vector<std::vector<std::string>> data;
         std::cout << "Wählen Sie die Datenlade-Methode: \n1. Datei\n2. Manuell\n";
