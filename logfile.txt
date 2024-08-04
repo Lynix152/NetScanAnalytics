@@ -1,0 +1,10 @@
+[0] DataSpectraX has started, logfile: 'logfile.txt'
+[0] DataSpectraX has started, logfile: 'logfile.txt'
+[3] Error while opening the ASCII File
+[4] Cannot open the file to be analyzed
+[0] DataSpectraX has started, logfile: 'logfile.txt'
+[0] DataSpectraX has started, logfile: 'logfile.txt'
+[3] Error while opening the ASCII File
+[4] Cannot open the file to be analyzed
+[0] DataSpectraX has started, logfile: 'logfile.txt'
+[1] CSV file loader created
