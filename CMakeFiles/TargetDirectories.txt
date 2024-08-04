@@ -1,3 +1,0 @@
-/home/mathias/CLionProjects/netscan/CMakeFiles/DataAnalysisSystem.dir
-/home/mathias/CLionProjects/netscan/CMakeFiles/edit_cache.dir
-/home/mathias/CLionProjects/netscan/CMakeFiles/rebuild_cache.dir
